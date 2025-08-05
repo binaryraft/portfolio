@@ -1,0 +1,483 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Galaxy Inspired Light Theme */
+    --background: 220 20% 97%; /* Very light cool grey */
+    --foreground: 220 25% 10%; /* Dark desaturated blue/black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
+
+    --primary: 270 75% 70%; /* Light Violet */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 220 15% 90%; /* Light cool grey */
+    --secondary-foreground: 270 70% 45%; /* Darker Violet */
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 330 80% 60%; /* Vibrant Pink/Magenta */
+    --accent-foreground: 0 0% 100%; /* White */
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 85%;
+    --input: 220 15% 96%;
+    --ring: 270 70% 75%; /* Based on light violet primary */
+
+    --chart-1: 270 75% 70%; /* Light Violet (Primary) */
+    --chart-2: 330 80% 60%; /* Pink/Magenta (Accent) */
+    --chart-3: 0 60% 60%;   /* Softer Red (Galaxy Combo) */
+    --chart-4: 250 60% 75%; /* Light Indigo/Lavender (Galaxy Combo) */
+    --chart-5: 210 70% 70%; /* Lighter Space Blue (Galaxy Combo) */
+
+    --sidebar-background: 220 15% 95%;
+    --sidebar-foreground: 220 25% 15%;
+    --sidebar-primary: 270 75% 70%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 330 80% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 15% 87%;
+    --sidebar-ring: 270 70% 75%;
+  }
+
+  .dark {
+    /* Cosmic Tech Dark Theme - Galaxy Inspired */
+    --background: 225 30% 6%; /* Very dark deep space blue/charcoal */
+    --foreground: 200 25% 88%; /* Light, cool off-white with a hint of cyan */
+
+    --card: 225 25% 10%; /* Darker, slightly translucent base for cards */
+    --card-foreground: 200 25% 85%;
+
+    --popover: 225 25% 9%;
+    --popover-foreground: 200 25% 85%;
+
+    --primary: 270 85% 65%; /* Vibrant Violet */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 225 20% 15%; /* Darker muted cool tone */
+    --secondary-foreground: 200 20% 70%;
+
+    --muted: 225 20% 18%; 
+    --muted-foreground: 200 15% 55%;
+
+    --accent: 330 80% 60%; /* Vibrant Pink/Magenta */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 50%; 
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 225 20% 20%; /* Subtle border, can be enhanced with glows */
+    --input: 225 20% 12%; 
+    --ring: 270 80% 70%; /* Based on new violet primary */
+
+    --chart-1: 270 85% 65%; /* Vibrant Violet (Primary) */
+    --chart-2: 330 80% 60%; /* Vibrant Pink/Magenta (Accent) */
+    --chart-3: 0 70% 55%;   /* Crimson Red (Galaxy Combo) */
+    --chart-4: 250 70% 70%; /* Indigo/Purple (Galaxy Combo) */
+    --chart-5: 210 80% 65%; /* Space Blue (Galaxy Combo) */
+
+    --sidebar-background: 225 25% 8%;
+    --sidebar-foreground: 200 25% 80%;
+    --sidebar-primary: 270 85% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 330 80% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 225 20% 18%;
+    --sidebar-ring: 270 80% 70%;
+  }
+
+  .hacker-theme {
+    --background: 220 15% 5%; /* Very dark, near black with a hint of blue */
+    --foreground: 120 70% 85%; /* Light green for text */
+
+    --card: 220 15% 8%; /* Slightly lighter dark for cards */
+    --card-foreground: 120 65% 88%;
+
+    --popover: 220 15% 7%;
+    --popover-foreground: 120 65% 88%;
+
+    --primary: 120 70% 50%; /* Vibrant Green */
+    --primary-foreground: 220 20% 10%; /* Dark contrast for green primary (blackish) */
+
+    --secondary: 220 10% 12%; /* Muted dark tone */
+    --secondary-foreground: 120 50% 70%; /* Muted green */
+
+    --muted: 220 10% 15%; 
+    --muted-foreground: 120 40% 60%; /* Dimmer green */
+
+    --accent: 50 100% 60%; /* Bright Yellow/Amber for accent */
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 70% 45%; 
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 50% 25%; /* Greenish border */
+    --input: 220 10% 10%; 
+    --ring: 120 70% 55%; /* Green ring for focus */
+
+    /* Charts in hacker theme can retain a green/yellow focus or be monochromatic */
+    --chart-1: 120 70% 55%; 
+    --chart-2: 50 100% 65%; 
+    --chart-3: 120 60% 45%; 
+    --chart-4: 50 90% 55%; 
+    --chart-5: 120 80% 65%;  
+
+    --sidebar-background: 220 15% 7%;
+    --sidebar-foreground: 120 60% 80%;
+    --sidebar-primary: 120 70% 50%;
+    --sidebar-primary-foreground: 220 20% 10%;
+    --sidebar-accent: 50 100% 60%;
+    --sidebar-accent-foreground: 0 0% 5%;
+    --sidebar-border: 120 50% 20%;
+    --sidebar-ring: 120 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-foreground antialiased bg-background;
+    font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    scroll-snap-type: y mandatory;
+    
+    background-attachment: fixed; /* Keep the main background fixed */
+    background-size: 200% 200%; 
+    animation: subtleCosmicBG 30s ease infinite alternate;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Prevent horizontal scroll from particle canvas if any minor overflow */
+  }
+
+  .dark body, :root:not(.hacker-theme) body { /* Default cosmic background - uses primary and accent */
+     background: 
+      radial-gradient(ellipse at 70% 20%, hsl(var(--primary)/0.08) 0%, transparent 40%),
+      radial-gradient(ellipse at 30% 80%, hsl(var(--accent)/0.08) 0%, transparent 40%),
+      hsl(var(--background));
+  }
+
+  .hacker-theme body { /* Hacker theme matrix-like background - uses its own primary */
+    background: 
+      linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+      repeating-linear-gradient(0deg, 
+        hsla(var(--primary)/0.15) 0px, hsla(var(--primary)/0.15) 1px, 
+        transparent 1px, transparent 60px), /* Horizontal lines */
+      repeating-linear-gradient(90deg, 
+        hsla(var(--primary)/0.12) 0px, hsla(var(--primary)/0.12) 1px, 
+        transparent 1px, transparent 60px), /* Vertical lines */
+      hsl(var(--background));
+    font-family: var(--font-geist-mono), monospace; /* Emphasize monospace for hacker */
+  }
+
+
+  section:not(.resume-section):not(.resume-page) {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    @apply w-full flex flex-col items-center justify-center p-6 sm:p-12 md:p-16 lg:p-24 overflow-hidden relative; /* Added relative for z-index context if needed */
+  }
+  ::selection {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+  .hacker-theme ::selection {
+    background-color: hsl(var(--primary)); /* Green selection for hacker */
+    color: hsl(var(--primary-foreground)); /* Dark text on green selection */
+  }
+}
+
+@keyframes subtleCosmicBG {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+
+.btn-accent-animated {
+  @apply bg-accent text-accent-foreground transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl hover:brightness-110;
+}
+.btn-accent-animated:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 20px hsl(var(--accent)/0.5), 0 0 30px hsl(var(--accent)/0.3);
+}
+.hacker-theme .btn-accent-animated { /* Hacker accent button (Yellow/Amber) */
+   @apply bg-accent text-accent-foreground hover:brightness-110; /* Uses hacker accent vars */
+}
+.hacker-theme .btn-accent-animated:hover {
+  box-shadow: 0 0 20px hsl(var(--accent)/0.7), 0 0 30px hsl(var(--accent)/0.5);
+}
+
+.btn-primary-animated {
+   @apply bg-primary text-primary-foreground transition-all duration-300 ease-in-out shadow-lg hover:shadow-xl hover:brightness-110;
+}
+.btn-primary-animated:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 20px hsl(var(--primary)/0.5), 0 0 30px hsl(var(--primary)/0.3);
+}
+.hacker-theme .btn-primary-animated { /* Hacker primary button (Green) */
+   @apply bg-primary text-primary-foreground hover:brightness-110; /* Uses hacker primary vars */
+}
+.hacker-theme .btn-primary-animated:hover {
+  box-shadow: 0 0 20px hsl(var(--primary)/0.7), 0 0 30px hsl(var(--primary)/0.5);
+}
+
+
+.card-interactive {
+  @apply bg-card/60 backdrop-blur-lg border border-accent/30 rounded-xl shadow-xl transition-all duration-300 ease-in-out;
+}
+.card-interactive:hover {
+  @apply shadow-2xl transform -translate-y-2 border-primary/70;
+  box-shadow: 
+    0 12px 35px hsl(var(--background)/0.4), 
+    0 0 25px hsl(var(--primary)/0.25),
+    inset 0 0 15px hsl(var(--primary)/0.15);
+}
+
+.hacker-theme .card-interactive {
+  @apply bg-card/70 backdrop-blur-md border border-primary/40 rounded-lg shadow-lg;
+}
+.hacker-theme .card-interactive:hover {
+  @apply border-primary/80 shadow-primary/40 shadow-2xl transform -translate-y-2;
+   box-shadow: 
+    0 0 30px hsl(var(--primary)/0.5),
+    inset 0 0 20px hsl(var(--primary)/0.25);
+}
+
+
+.input, .textarea { /* For ShadCN input/textarea */
+  @apply bg-input/70 backdrop-blur-sm border-border/70 focus:ring-primary focus:border-primary/80;
+}
+.hacker-theme .input, .hacker-theme .textarea {
+  @apply bg-input/80 border-primary/50 placeholder:text-muted-foreground/70 focus:border-primary/90 text-foreground;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInAnimation 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInAnimation {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.scale-in {
+  animation: scaleInAnimation 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+@keyframes scaleInAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+*:focus-visible {
+  @apply outline-none ring-2 ring-offset-2 ring-ring ring-offset-background;
+}
+
+/* Print Styles for Resume */
+@media print {
+  html, html.dark, html.light, .hacker-theme { /* Force light theme variables for printing resume */
+    --background: 255 100% 100% !important; /* White */
+    --foreground: 0 0% 0% !important; /* Black */
+    --card: 255 100% 100% !important;
+    --card-foreground: 0 0% 0% !important;
+    --primary: 0 0% 20% !important; /* Dark Gray for primary text elements */
+    --primary-foreground: 255 100% 100% !important;
+    --accent: 0 0% 30% !important; /* Slightly lighter gray for accents */
+    --accent-foreground: 255 100% 100% !important;
+    --muted-foreground: 0 0% 40% !important; /* Medium gray */
+    --border: 0 0% 85% !important; /* Light gray border */
+    font-family: var(--font-geist-sans), 'Arial', sans-serif !important;
+  }
+  
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: white !important; 
+    color: black !important; 
+    font-size: 9pt !important; /* Reduced for one-page fit */
+    line-height: 1.3 !important; /* Reduced for one-page fit */
+    scroll-snap-type: none !important;
+    padding-top: 0 !important;
+    margin:0 !important;
+  }
+  header, footer, nav, aside, .no-print, #contact form, #contact .space-y-8 > .card-interactive:last-child, #particle-canvas { /* Hide particle canvas on print */
+    display: none !important;
+  }
+  main, .resume-page {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: transparent !important;
+  }
+  .resume-container {
+    padding: 0.5in !important; /* Reduced resume margins */
+    max-width: 8.5in !important; 
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: white !important;
+  }
+  .resume-section {
+    padding: 0.15in 0 !important; /* Reduced section padding */
+    margin-bottom: 0.15in !important; /* Reduced section margin */
+    border-bottom: 1px solid hsl(var(--border)) !important; 
+    min-height: auto !important;
+    page-break-inside: avoid !important;
+  }
+  .resume-section:last-child {
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 { /* Fixed h6 for completeness */
+    color: black !important; 
+    page-break-after: avoid !important;
+    margin-bottom: 0.1in !important; /* Tighter heading margins */
+  }
+  .resume-section h2 {
+     margin-bottom: 0.1in !important;
+  }
+  .resume-section h3 {
+     margin-bottom: 0.05in !important;
+  }
+   .resume-section p, .resume-section ul {
+     margin-bottom: 0.08in !important; /* Tighter paragraph/list margins */
+   }
+
+  a {
+    color: #0000EE !important; /* Standard blue for links */
+    text-decoration: none !important;
+  }
+  /* Show full URLs for external links in print */
+  a[href^="http"].print-show-link::after, a[href^="https"].print-show-link::after {
+     content: " (" attr(href) ")" !important;
+     font-style: italic !important;
+     font-size: 0.9em !important;
+     color: #555 !important;
+  }
+  .print-hidden {
+    display: none !important;
+  }
+  
+   ul li.print-break-inside-avoid, .print-break-inside-avoid {
+    page-break-inside: avoid !important;
+   }
+   ul.list-disc.list-inside {
+     padding-left: 1em !important; /* Ensure lists don't get too indented */
+   }
+   ul li {
+     margin-bottom: 0.05in !important; /* Tighter list item spacing */
+     page-break-inside: avoid !important; /* Avoid breaking list items */
+   }
+}
+
+/* Hacker theme specific text glow */
+.hacker-theme .text-glow-primary {
+  text-shadow: 0 0 6px hsl(var(--primary)/0.8), 0 0 12px hsl(var(--primary)/0.6), 0 0 18px hsl(var(--primary)/0.4);
+}
+.hacker-theme .text-glow-accent {
+  text-shadow: 0 0 6px hsl(var(--accent)/0.8), 0 0 12px hsl(var(--accent)/0.6), 0 0 18px hsl(var(--accent)/0.4);
+}
+
+/* Hacker theme icon color correction */
+.hacker-theme [class*="bg-primary"] svg,
+.hacker-theme .bg-green-500 svg, /* For explicit Tailwind green classes if used */
+.hacker-theme .btn-primary-animated svg { /* Ensure icons in primary buttons are dark */
+  color: hsl(var(--primary-foreground)) !important;
+}
+/* Ensure icons within accent buttons also respect their foreground, if accent bg is light */
+.hacker-theme .btn-accent-animated svg {
+  color: hsl(var(--accent-foreground)) !important;
+}
+
+
+/* Subtle shimmer for progress bars */
+.progress-shimmer > div {
+  position: relative;
+  overflow: hidden;
+}
+.progress-shimmer > div::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsla(var(--primary-foreground)/0.15),
+    transparent
+  );
+  animation: shimmer 2.5s infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.group:hover .progress-shimmer > div::after, .progress-shimmer:hover > div::after {
+  opacity: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Canvas styling */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Behind all content */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+    
