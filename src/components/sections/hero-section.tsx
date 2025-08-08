@@ -2,7 +2,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Cpu, Orbit, Sparkles, Terminal, ShieldCheck } from "lucide-react"; 
+import { ArrowDown, Cpu, Sparkles, Terminal, ShieldCheck } from "lucide-react"; 
 import Link from "next/link";
 import { useTheme } from "@/contexts/theme-context";
 

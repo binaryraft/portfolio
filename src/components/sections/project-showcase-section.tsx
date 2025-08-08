@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Github, ExternalLink, Layers, Code, Database, Wind, Zap, Box, Cloud } from 'lucide-react';
 import React from 'react';
 
-// Simplified SVG icon components for brand logos
 const icons: { [key: string]: React.FC<any> } = {
   'next.js': ({ className }) => (
     <svg className={className} role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 0L2.25 10.305V24h19.5V10.305L12 0zm7.125 21.938h-2.25v-9.376h2.25v9.376zm-4.5-2.812H12l-2.25-3.375h-2.25v6.187H5.25V10.305h6.375a2.25 2.25 0 012.25 2.25v2.25a2.25 2.25 0 01-2.25 2.25H9.375l2.25 3.375h3.001v1.538z"></path></svg>
@@ -46,6 +45,8 @@ const projectsData = [
     frameworks: ["Next.js", "Tailwind CSS", "MongoDB"],
     repoLink: "https://github.com/binaryraft/stockflow",
     liveLink: "https://stockspeed.vercel.app",
+    image: "https://placehold.co/1280x800.png",
+    imageHint: "inventory management dashboard"
   },
   {
     id: 2,
@@ -54,6 +55,8 @@ const projectsData = [
     frameworks: ["Next.js", "Tailwind CSS", "MongoDB"],
     repoLink: "https://github.com/binaryraft/stockflow",
     liveLink: "https://spring-mauve.vercel.app",
+    image: "https://placehold.co/1280x800.png",
+    imageHint: "billing software jewellery"
   },
   {
     id: 3,
@@ -62,6 +65,8 @@ const projectsData = [
     frameworks: ["React", "Vite", "Firebase", "Tailwind CSS", "Envia API"],
     repoLink: null,
     liveLink: "https://laynered.com",
+    image: "https://placehold.co/1280x800.png",
+    imageHint: "ecommerce website clothing"
   },
    {
     id: 4,
@@ -70,6 +75,8 @@ const projectsData = [
     frameworks: ["Firebase Firestore", "Next.js"],
     repoLink: null,
     liveLink: "https://www.natureofthedivine.com",
+    image: "https://placehold.co/1280x800.png",
+    imageHint: "book selling website"
   },
 ];
 
@@ -88,17 +95,16 @@ export default function ProjectShowcaseSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project, index) => (
             <Card key={project.id} className="group flex flex-col card-interactive animate-fade-in-up" style={{ animationDelay: `${index * 0.1 + 0.2}s` }}>
-              <div className="relative h-56 w-full overflow-hidden rounded-t-xl bg-muted/30">
-                <iframe
-                  src={project.liveLink}
-                  title={project.title}
-                  className="absolute top-0 left-0 w-[1280px] h-[800px] border-0 origin-top-left transition-all duration-500 ease-in-out group-hover:opacity-90"
-                  style={{ transform: 'scale(0.3)', transformOrigin: '0 0' }}
-                  sandbox="allow-scripts allow-same-origin"
-                  scrolling="no"
-                  loading="lazy"
-                ></iframe>
-                {/* Clickable Overlay */}
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-t-xl bg-muted/30">
+                <Image
+                    src={project.image}
+                    alt={`Screenshot of ${project.title}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+                    data-ai-hint={project.imageHint}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
                 <a 
                   href={project.liveLink} 
                   target="_blank" 

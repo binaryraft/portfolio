@@ -44,15 +44,16 @@ export default function AcademicHistorySection() {
         </h2>
         <div className="relative">
           {/* Central Timeline Bar */}
-          <div className="absolute left-1/2 top-0 h-full w-1 bg-border/50 -translate-x-1/2"></div>
+          <div className="absolute left-1/2 top-0 h-full w-1 bg-border/50 -translate-x-1/2 md:left-1/2"></div>
           
           <div className="space-y-12 md:space-y-0">
             {academicData.map((item, index) => (
               <div key={item.id} className="relative w-full">
-                {/* Timeline Item Container */}
-                <div className={`flex items-center w-full ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
-                  {/* Half with empty space */}
+                {/* Timeline Item Container - adjusted for mobile */}
+                <div className={`flex w-full items-start md:items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+                  {/* Half with empty space on desktop */}
                   <div className="hidden md:block w-5/12"></div>
+                   <div className="block md:hidden w-[calc(50%-1.75rem)]"></div>
                   {/* Center Dot and Icon */}
                   <div className="z-10 flex items-center justify-center">
                     <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-lg shadow-primary/30 ring-4 ring-background animate-scale-in" style={{ animationDelay: `${index * 0.15 + 0.3}s` }}>
@@ -60,7 +61,7 @@ export default function AcademicHistorySection() {
                     </div>
                   </div>
                   {/* Card Section */}
-                  <div className="w-full md:w-5/12 px-2 sm:px-4">
+                  <div className="w-[calc(50%+1.75rem)] md:w-5/12 px-2 sm:px-4">
                     <Card className="card-interactive animate-fade-in-up" style={{ animationDelay: `${index * 0.15 + 0.2}s` }}>
                       <CardHeader className="pb-3">
                         <CardTitle className="text-xl font-semibold text-primary group-hover:text-accent transition-colors duration-300">{item.institution}</CardTitle>
